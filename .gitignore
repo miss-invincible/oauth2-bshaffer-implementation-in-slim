@@ -1,5 +1,6 @@
 # Test Files #
 test/config/test.sqlite
 vendor
+vendor/*
 composer.lock
 .idea
