@@ -50,7 +50,7 @@ class Pdo implements
                 'password' => 'mani1234',
                 'options' => array(),
             ), $connection);
-            $data = new PDO($connection['dsn'], 'root' ,'mani1234', $connection['options']);
+            $data = new \PDO($connection['dsn'], 'root' ,'mani1234', $connection['options']);
         }
         
         $this->db = $data;
