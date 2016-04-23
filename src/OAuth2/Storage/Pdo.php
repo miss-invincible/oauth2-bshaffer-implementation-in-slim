@@ -46,13 +46,14 @@ class Pdo implements
             }
             // merge optional parameters
             $connection = array_merge(array(
-                'username' => null,
-                'password' => null,
+                'username' => 'root',
+                'password' => 'mani1234',
                 'options' => array(),
             ), $connection);
-            $connection = new \PDO($connection['dsn'], $connection['username'], $connection['password'], $connection['options']);
+            $data = new PDO($connection['dsn'], 'root' ,'mani1234', $connection['options']);
         }
-        $this->db = $connection;
+        
+        $this->db = $data;
 
         // debugging
         $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);

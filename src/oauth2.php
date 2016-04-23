@@ -4,14 +4,9 @@ class OAuth2
     public function __construct()
     {
       // require_once __DIR__ .'/config.php';
-        $mysql = [
-    'host' => 'localhost',
-    'username' => 'root',
-    'password' => 'mani1234',
-    'database' => 'my_oauth2_db'
-        ];
+       
         global $mysql_api_config, $scope_array;
-        $storage = new OAuth2\Storage\Pdo($mysql_api_config);
+        $storage = new OAuth2\Storage\Pdo('mysql:host=localhost;dbname=my_oauth2_db', 'root', 'mani1234');
         $server = new OAuth2\Server($storage, array('enforce_state' => true));
         $server->addGrantType(new OAuth2\GrantType\ClientCredentials($storage));
         $server->addGrantType(new OAuth2\GrantType\ClientCredentials($storage));
