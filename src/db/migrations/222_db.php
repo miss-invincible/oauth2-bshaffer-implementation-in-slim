@@ -6,7 +6,7 @@ class Db extends AbstractMigration
 {
     public function up()
     {
-        $oauth_clients = $this->table('oauth_clients',array('id'=>false,'primary_key'=>array(client_id)));
+        $oauth_clients = $this->table('oauth_clients',array('id'=>false,'primary_key'=>array("client_id")));
 $oauth_clients->addColumn('client_id','string',array('limit'=>80,'null'=>false))
               ->addColumn('client_secret','string',array('limit'=>80))
               ->addColumn('redirect_uri','string',array('limit'=>2000,'null'=>false))
@@ -15,7 +15,7 @@ $oauth_clients->addColumn('client_id','string',array('limit'=>80,'null'=>false))
               ->addColumn('user_id','string',array('limit'=>80))
               ->save();
 
-$oauth_access_tokens = $this->table('oauth_access_tokens',array('íd'=>false,'primary_key'=>array(access_token)));
+$oauth_access_tokens = $this->table('oauth_access_tokens',array('íd'=>false,'primary_key'=>array("access_token")));
 $oauth_access_tokens->addColumn('access_token','string',array('limit'=>40,'null'=>false))
                     ->addColumn('client_id','string',array('limit'=>80,'null'=>false))
                     ->addColumn('user_id','string',array('limit'=>255))

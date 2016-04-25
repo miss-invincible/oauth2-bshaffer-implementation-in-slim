@@ -34,7 +34,7 @@ class Pdo implements
 
     public function __construct($connection, $config = array())
     {
-        if (!$connection instanceof \PDO) {
+        if (!$connection instanceof PDO) {
             if (is_string($connection)) {
                 $connection = array('dsn' => $connection);
             }
@@ -47,16 +47,16 @@ class Pdo implements
             // merge optional parameters
             $connection = array_merge(array(
                 'username' => 'root',
-                'password' => 'mani1234',
+                'password' => 'password',
                 'options' => array(),
             ), $connection);
-            $data = new \PDO($connection['dsn'], 'root' ,'mani1234', $connection['options']);
+            $data = new PDO($connection['dsn'], 'root' ,'password', $connection['options']);
         }
         
         $this->db = $data;
 
         // debugging
-        $connection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $this->config = array_merge(array(
             'client_table' => 'oauth_clients',

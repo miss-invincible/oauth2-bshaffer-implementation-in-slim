@@ -1,7 +1,7 @@
 <?php
-$dsn      = 'mysqli://root:mani1234@localhost/my_oauth2_db';
+$dsn      = '"mysql:dbname=my_oauth2_db;host=localhost"';
 $username = 'root';
-$password = 'mani1234';
+$password = 'password';
 
 // error reporting (this is a demo, after all!)
 ini_set('display_errors',1);error_reporting(E_ALL);
@@ -11,8 +11,8 @@ require_once(__DIR__ .'/OAuth2/Autoloader.php');
 OAuth2\Autoloader::register();
 
 // $dsn is the Data Source Name for your database, for exmaple "mysql:dbname=my_oauth2_db;host=localhost"
-//$storage = new OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
-$storage = new OAuth2\Storage\Pdo('mysqli://root:mani1234@localhost/my_oauth2_db', 'root', 'mani1234');
+$storage = new OAuth2\Storage\Pdo(array('dsn' => $dsn, 'username' => $username, 'password' => $password));
+//$storage = new OAuth2\Storage\Pdo('mysqli://root:mani1234@localhost/my_oauth2_db', 'root', 'password');
 // Pass a storage object or array of storage objects to the OAuth2 server class
 $server = new OAuth2\Server($storage);
 

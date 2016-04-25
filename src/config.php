@@ -3,6 +3,6 @@
 global $mysql = Array(
 	'host' => 'localhost',
 	'username' => 'root',
-	'password' => 'main1234',
+	'password' => 'password',
 	'database' => 'my_oauth2_db'
 );

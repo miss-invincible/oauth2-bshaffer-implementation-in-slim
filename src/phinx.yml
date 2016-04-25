@@ -1,5 +1,5 @@
 paths:
-    migrations: ../db/migrations
+    migrations: ./db/migrations
     seeds: ../db/seeds
 
 environments:
@@ -11,6 +11,6 @@ environments:
         host: localhost
         name: my_oauth2_db
         user: root
-        pass: mani1234
+        pass: password
         port: 3306
         charset: utf8
