@@ -1,5 +1,5 @@
 <?php
-$dsn      = '"mysql:dbname=my_oauth2_db;host=localhost"';
+$dsn      = 'mysql:dbname=my_oauth2_db;host=localhost';
 $username = 'root';
 $password = 'password';
 

@@ -10,10 +10,10 @@ require_once(__DIR__.'/../oauth2.php');
 
 
 
-$settings = require __DIR__ . '/../src/settings.php';
+$settings = require __DIR__ . '/../settings.php';
 $app = new \Slim\App(["settings" => $settings]);
-require __DIR__ . '/../src/dependencies.php';
-require __DIR__ . '/../src/routes.php';
+require __DIR__ . '/../dependencies.php';
+require __DIR__ . '/../routes.php';
 
  
 $app->run();
